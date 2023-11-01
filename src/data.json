@@ -1,17 +1,194 @@
-[
+
+[{
+    "categoryID" : 3,
     
+    "name" : "Salmon with Grapefruit and Lentil Salad",
+    "picture" : "https://i.postimg.cc/8CRMqSB7/dinner1.png",
+
+    "descriptions" : "Salmon with Grapefruit and Lentil Salad is a delightful and nutritious dish that combines pan-seared salmon with a refreshing salad. The salmon is cooked to perfection and topped with a zesty grapefruit vinaigrette, which adds a burst of citrusy flavor. The lentil salad complements the fish beautifully, offering a hearty and protein-rich base, enriched with fresh vegetables and herbs. This dish strikes a perfect balance between flavors and textures, making it a delicious and wholesome meal choice.",
+    "price" : 55
+
+},
+{
+    "categoryID" : 3,
     
-    
-    
-    
-    
-    
-    
-    
+    "name" : "Lemony Salmon Piccata",
+    "picture" : "https://i.postimg.cc/66jnszRf/dinner2.png",
+    "descriptions" : "Lemony Salmon Piccata is a delectable dish featuring tender salmon fillets bathed in a luscious lemony caper sauce. The salmon is lightly seared to perfection, then served with a tangy and aromatic sauce made from lemon juice, capers, butter, and fresh herbs. This flavorful combination creates a delightful balance of savory and citrusy notes, making it a mouthwatering and elegant seafood dish that's sure to please your taste buds.",
+    "price" : 55
+
+},
+    {
+        "categoryID" : 3,
+        
+        "name" : "Pork Tenderloin with Quinoa Pilaf",
+        "picture" : "https://i.postimg.cc/s2TDBH3n/dinner3.png",
+        "descriptions" : "Pork Tenderloin with Quinoa Pilaf is a savory and wholesome meal that pairs succulent pork tenderloin with a flavorful quinoa pilaf. The pork is usually seasoned and seared to a golden brown, then roasted to perfection. It's served alongside a pilaf made with quinoa, herbs, vegetables, and sometimes nuts, offering a well-rounded, nutritious, and delicious dining experience. This dish combines tender, juicy meat with a hearty quinoa side, making it a well-balanced and satisfying option for those looking for a wholesome dinner.",
+        "price" : 55
+
+    },
+    {
+        "categoryID" : 3,
+        
+        "name" : "French Fries with Cheese",
+        "picture" : "https://i.postimg.cc/L4YLpLTd/dinner4.png",
+        "descriptions" : "French Fries with Cheese is a simple and indulgent dish that features crispy, golden-brown French fries smothered in melted cheese. Typically, the cheese used can vary and may include options like cheddar, mozzarella, or even cheese sauce. This combination creates a delightful contrast of textures and flavors, with the hot, crispy fries and gooey, savory cheese making for a satisfying and comforting snack or side dish.",
+        "price" : 55
+
+    },
+    {
+        "categoryID" : 3,
+        
+        "name" : "Garlic Butter Baked Salmon",
+        "picture" : "https://i.postimg.cc/zXYbYMvW/dinner5.png",
+        "descriptions" : "Garlic Butter Baked Salmon is a mouthwatering seafood dish in which salmon fillets are coated with a rich and flavorful mixture of garlic and butter, then baked to perfection. The salmon absorbs the savory garlic and butter, becoming tender and juicy, while developing a deliciously crispy exterior. This dish is known for its delightful balance of garlicky and buttery notes, making it a popular choice for those who appreciate a simple yet delicious way to prepare salmon.",
+        "price" : 55
+
+    },
+
+    {
+        "categoryID" : 3,
+        
+        "name" : "Baked Chicken",
+        "picture" : "https://i.postimg.cc/nLWrRSNX/dinner6.png",
+        "descriptions" : "Baked Chicken refers to a versatile cooking method where chicken is prepared by roasting it in an oven. The chicken may be seasoned with various herbs, spices, or marinades to add flavor. Baking the chicken helps it develop a crispy and golden-brown skin while keeping the meat inside moist and tender. It's a popular and straightforward way to cook chicken, and it can be customized with a wide range of ingredients and seasonings to suit different tastes and preferences.",
+        "price" : 55
+
+    },
+    {
+        "categoryID" : "Breakfast",
+        
+        "name" : "Bagel and Cream Cheese",
+        "picture" : "https://i.postimg.cc/B6d3DdkC/breakfast1.png",
+        "descriptions" : "It seems like you're referring to Bagel and Cream Cheese. This is a classic and beloved breakfast or snack option where a bagel, a round bread roll with a hole in the center, is typically sliced in half and toasted. It's then generously spread with cream cheese, a creamy and mildly tangy cheese spread. The combination of the chewy bagel and the smooth, rich cream cheese creates a satisfying and delicious pairing that can be customized with various toppings, such as smoked salmon, tomatoes, onions, or various seasonings to suit your taste preferences.",
+        "price" : 55
+
+    },
+    {
+        "categoryID" : "Breakfast",
+        
+        "name" : "Breakfast Sandwich",
+        "picture" : "https://i.postimg.cc/VsnQpZ23/breakfast2.png",
+        "descriptions" : "A Breakfast Sandwich is a popular morning meal consisting of various ingredients sandwiched between bread, typically served in a portable and easy-to-eat form. The core components usually include: Additional ingredients like vegetables (lettuce, tomato, onion), avocado, and various spreads can also be added to create a customized breakfast sandwich. These sandwiches offer a convenient and hearty way to start the day, and their ingredients can be adapted to suit individual taste preferences.",
+        "price" : 55
+
+    },
+        {
+            "categoryID" : "Breakfast",
+            
+            "name" : "Baked chicken",
+            "picture" : "https://i.postimg.cc/G3kVq8yR/breakfast3.png",
+            "descriptions" : "Baked chicken is a straightforward and popular cooking method that involves roasting chicken in an oven. To prepare baked chicken, follow these basic steps: Pat the chicken dry with paper towels to remove excess moisture. This helps the skin become crispy during baking. You can leave the skin on for extra flavor, or remove it for a lighter option.Season the Chicken: Rub the chicken with olive oil or melted butter to help it brown and keep it moist. Then, season the chicken with salt, pepper, and any other herbs or spices you prefer. Common options include garlic powder, paprika, thyme, or rosemary.",
+            "price" : 55
+
+        },
+        {
+            "categoryID" : "Breakfast",
+            
+            "name" : "Eggs Benedict",
+            "picture" : "https://i.postimg.cc/QM9n5H3R/breakfast4.png",
+            "descriptions" : "Eggs Benedict, a brunch masterpiece celebrated for its exquisite combination of ingredients, unfolds as a symphony of culinary craftsmanship. At its core are delicately poached eggs, each possessing the ideal balance of creamy yolk and set whites. These gems find their stage atop slices of Canadian bacon or ham, which contribute a savory, salty richness that harmonizes perfectly with the eggs.A foundation of toasted English muffins, graced with a subtle hint of butter, serves as the canvas for this masterpiece, providing a textural contrast that complements the softness of the eggs and the bacon. The crowning glory of Eggs Benedict is the velvety hollandaise sauce,",
+            "price" : 55
+
+        },
+        {
+            "categoryID" : "Breakfast",
+            
+            "name" : "Toast crossiant fried egg",
+            "picture" : "https://i.postimg.cc/ZRPHFNDD/breakfast5.png",
+            "descriptions" : "A Croissant Breakfast Sandwich with Fried Egg is a simple yet delicious morning treat. It consists of a light and flaky croissant, often sliced in half and toasted for a hint of crispiness. Inside, you'll find a perfectly fried egg, typically with a runny yolk for extra creaminess. The combination of the buttery croissant and the rich, savory fried egg creates a delightful contrast in textures and flavors, making it a popular choice for breakfast or brunch. You can also customize it by adding cheese, bacon, ham, or other toppings to suit your taste.",
+            "price" : 55
+
+        },
+
+        {
+            "categoryID" : "Breakfast",
+            
+            "name" : "Full breakfast fried egg toast brunch",
+            "picture" : "https://i.postimg.cc/FFDgrhtc/breakfast6.png",
+            "descriptions" : "A Full Breakfast, a brunch tradition beloved for its hearty indulgence, unfolds as a cornucopia of flavors and textures that leave diners feeling both satisfied and invigorated. At its heart are eggs, fried with precision to yield a velvety yolk that bathes the plate in sunshine. They are accompanied by toast, a simple yet comforting staple, carrying the warmth of toasted bread with a hint of butter or the sweetness of fruit jam.",
+            "price" : 55
+
+        },
 
 
 
 
-       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {
+            "categoryID" : 2,
+            
+            "name" : " healthy meal plan",
+            "picture" : "https://i.postimg.cc/yxjz5kWL/lunch1.png",
+            "descriptions" : "A healthy meal plan is designed to provide a balanced and nutritious diet while taking into account individual dietary requirements and health goals. The plan typically includes several meals throughout the day, with each meal consisting of a combination of different food groups.For breakfast, options might include Greek yogurt with fresh berries and honey, oatmeal topped with bananas and nuts, or scrambled eggs with vegetables and whole-grain toast.",
+            "price" : 55
+
+        },
+        {
+            "categoryID" : 2,
+            
+            "name" : "Fried Chicken Bento",
+            "picture" : "https://i.postimg.cc/y8w2LFvV/lunch2.png",
+            "descriptions" : "A Fried Chicken Bento is a Japanese-style meal box or lunchbox that features crispy fried chicken as its centerpiece. This delicious and convenient meal typically includ Fried Chicken: Bite-sized pieces of fried chicken with a flavorful, crispy coating. Rice: Steamed white or brown rice, often shaped into a small mound or decorated with seasonings like furikake (rice seasoning). Pickled Vegetables (Tsukemono): Assorted Japanese pickles such as pickled radishes, cucumbers, or other vegetables to add a tangy contrast",
+            "price" : 55
+
+        },
+        {
+            "categoryID" : 2,
+            
+            "name" : "Tarragon-Rubbed Salmon",
+            "picture" : "https://i.postimg.cc/YqTX7tgR/lunch3.png",
+            "descriptions" : "Tarragon-Rubbed Salmon is a delectable dish featuring salmon fillets that are coated with a fragrant tarragon rub. The salmon is typically seasoned with a pinch of salt and pepper and then generously rubbed with a mixture of fresh tarragon leaves and olive oil. This tarragon and olive oil mixture imparts a lovely herbal flavor and aroma to the salmon.The prepared salmon can be cooked through pan-searing or baking. For pan-searing, the salmon is seared skin-side down to achieve a crispy skin and then flipped before being transferred to the oven for completion. In the case of baking, t",
+            "price" : 55
+
+        },
+            {
+                "categoryID" : 2,
+                
+                "name" : "Indian lunch",
+                "picture" : "https://i.postimg.cc/J0vQRQy0/lunch4.png",
+                "descriptions" : "An Indian lunch is a delectable and diverse meal, known for its rich combination of flavors and spices. It usually features a range of dishes that cater to both vegetarians and non-vegetarians.The main course often consists of a choice between rice or roti (Indian flatbread), which serves as the foundation of the meal. Accompanying this are lentil curries, or dal made from various lentils and seasoned with an array of spices.",
+                "price" : 55
+
+            },
+
+            {
+                "categoryID" : 2,
+                
+                "name" : "Beef Steak",
+                "picture" : "https://i.postimg.cc/6qkCk5SG/lunch5.png",
+                "descriptions" : "A Beef Steak is a popular and savory dish that features a thick cut of beef, often seasoned and cooked to the desired level of doneness. It's known for its juicy and flavorful meat, typically served as a standalone item or with various accompaniments. Beef steaks come in various cuts, including ribeye, sirloin, T-bone, filet mignon, and more, each offering its unique texture and taste. The steak is often seared on a hot grill, pan-fried, or broiled, and it can be served with a range of sauces or toppings, such as garlic butter, mushroom gravy, or a classic steak sauce. Beef steaks are enjoyed for their robust and meaty flavor, making them a favorite choice for meat enthusiasts.",
+                "price" : 55
+
+            },
+
+            {
+                "categoryID" : 2,
+                
+                "name" : "Honey Soy Glazed Salmon with Peppers",
+                "picture" : "https://i.postimg.cc/XJXFXC6C/lunch6.png",
+                "descriptions" : "Honey Soy Glazed Salmon with Peppers is a delectable and balanced dish that features salmon fillets coated with a sweet and savory honey soy glaze. The salmon is typically pan-seared or baked, allowing it to develop a crispy outer layer while retaining its tender and flaky interior.The heart of this dish is the honey soy glaze, prepared by combining honey and soy sauce, often infused with aromatic ingredients like garlic and ginger.",
+                "price" : 55
+
+            }
 ]
-

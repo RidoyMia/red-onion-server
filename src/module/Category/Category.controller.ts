@@ -7,8 +7,9 @@ import { categoryService } from "./Category.services"
 const createCategoryController = async(req:Request,res:Response,next:NextFunction) :Promise<Icategory | any> =>{
     try {
         const data = req.body;
-     const result = await categoryService.createCategoryServices(data);
-     res.status(200).send({
+     
+        const result = await categoryService.createCategoryServices();
+       res.status(200).send({
         action : true,
         result
      })
@@ -19,7 +20,7 @@ const createCategoryController = async(req:Request,res:Response,next:NextFunctio
 
 const getCategoryController = async(req:Request,res:Response,next:NextFunction) :Promise<Icategory | any> =>{
     try {
-       
+        console.log('ami');
      const result = await categoryService.getCategoryServices();
      res.status(200).send({
         action : true,

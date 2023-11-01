@@ -11,9 +11,9 @@ const data = [
         "name" : "Dinner"
     }
 ]
-const createCategoryServices = async(data : Icategory[]):Promise<Icategory | any> =>{
+const createCategoryServices = async():Promise<Icategory | any> =>{
     const result = await prisma.category.createMany({
-        data 
+        data : data
     })
     return result
 }

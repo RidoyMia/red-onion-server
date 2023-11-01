@@ -31,6 +31,7 @@ model Foods {
    category Category @relation(fields: [categoryID],references: [id])
    name String @unique
    descriptions String 
+   picture String
    price Int 
    order orders[]
 

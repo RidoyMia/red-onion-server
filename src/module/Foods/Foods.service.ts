@@ -1,9 +1,9 @@
 import { prisma } from "../../Prisma/Prisma";
 import { Ifood } from "./Foods.interface";
 
-const createFoodsService = async(data :Ifood[] ) :Promise<Ifood[] | any> =>{
-    const result = await prisma.foods.createMany({
-        data 
+const createFoodsService = async(data:Ifood ) :Promise<Ifood[] | any> =>{
+    const result = await prisma.foods.create({
+        data :data
     })
     return result
 }
