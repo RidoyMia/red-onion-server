@@ -1,7 +1,7 @@
 
 import express,{Request,Response,NextFunction} from "express"
 import { Icategory } from "./Category.interface"
-import { GlobalError } from "../globalError/GlobalError"
+import { GlobalError } from "../../globalError/GlobalError"
 import { categoryService } from "./Category.services"
 
 const createCategoryController = async(req:Request,res:Response,next:NextFunction) :Promise<Icategory | any> =>{

@@ -1,4 +1,4 @@
-import { prisma } from "../Prisma/Prisma";
+import { prisma } from "../../Prisma/Prisma";
 import { Icategory } from "./Category.interface";
 const data = [
     {
