@@ -43,3 +43,11 @@ model orders {
   productId Int
   product Foods @relation(fields: [productId],references: [id])
 }
+
+model Blog {
+  id Int @id @default(autoincrement())
+  name String
+  icon String
+  picture String
+  descriptions String
+}
