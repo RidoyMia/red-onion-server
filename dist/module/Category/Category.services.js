@@ -22,9 +22,9 @@ const data = [
         "name": "Dinner"
     }
 ];
-const createCategoryServices = (data) => __awaiter(void 0, void 0, void 0, function* () {
+const createCategoryServices = () => __awaiter(void 0, void 0, void 0, function* () {
     const result = yield Prisma_1.prisma.category.createMany({
-        data
+        data: data
     });
     return result;
 });

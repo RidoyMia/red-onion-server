@@ -12,8 +12,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.FoodsService = void 0;
 const Prisma_1 = require("../../Prisma/Prisma");
 const createFoodsService = (data) => __awaiter(void 0, void 0, void 0, function* () {
-    const result = yield Prisma_1.prisma.foods.createMany({
-        data
+    const result = yield Prisma_1.prisma.foods.create({
+        data: data
     });
     return result;
 });

@@ -15,7 +15,7 @@ const Category_services_1 = require("./Category.services");
 const createCategoryController = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const data = req.body;
-        const result = yield Category_services_1.categoryService.createCategoryServices(data);
+        const result = yield Category_services_1.categoryService.createCategoryServices();
         res.status(200).send({
             action: true,
             result
@@ -27,6 +27,7 @@ const createCategoryController = (req, res, next) => __awaiter(void 0, void 0, v
 });
 const getCategoryController = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
+        console.log('ami');
         const result = yield Category_services_1.categoryService.getCategoryServices();
         res.status(200).send({
             action: true,

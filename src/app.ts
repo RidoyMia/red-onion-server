@@ -5,7 +5,9 @@ import CategoryRouter from "./module/Category/Category.route"
 import foodRouter from "./module/Foods/Foods.route"
 const app :Application = express()
 
-
+app.use(cors())
+app.use(express.json())
+app.use(express.urlencoded({extended : true}))
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
