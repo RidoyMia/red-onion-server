@@ -16,10 +16,19 @@ const getByCategory = async(id : number) : Promise<Ifood[] | any>=>{
     })
     return result
 }
+const getSingleFood = async(id : number) : Promise<Ifood[] | any>=>{
+    const result = await prisma.foods.findMany({
+        where : {
+            id
+        }
+    })
+    return result
+}
 
 
 
 export const FoodsService = {
     createFoodsService,
-    getByCategory
+    getByCategory,
+    getSingleFood
 }
