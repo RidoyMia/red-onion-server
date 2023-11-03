@@ -25,7 +25,16 @@ const getByCategory = (id) => __awaiter(void 0, void 0, void 0, function* () {
     });
     return result;
 });
+const getSingleFood = (id) => __awaiter(void 0, void 0, void 0, function* () {
+    const result = yield Prisma_1.prisma.foods.findMany({
+        where: {
+            id
+        }
+    });
+    return result;
+});
 exports.FoodsService = {
     createFoodsService,
-    getByCategory
+    getByCategory,
+    getSingleFood
 };

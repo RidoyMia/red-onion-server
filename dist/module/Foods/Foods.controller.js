@@ -38,7 +38,21 @@ const getByCategoryController = (req, res, next) => __awaiter(void 0, void 0, vo
         (0, GlobalError_1.GlobalError)(error, req, res, next);
     }
 });
+const getSingleFoodController = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const id = parseInt(req.params.id);
+        const result = yield Foods_service_1.FoodsService.getSingleFood(id);
+        res.status(200).send({
+            action: true,
+            result
+        });
+    }
+    catch (error) {
+        (0, GlobalError_1.GlobalError)(error, req, res, next);
+    }
+});
 exports.FoodsController = {
     createFoodsController,
-    getByCategoryController
+    getByCategoryController,
+    getSingleFoodController
 };
