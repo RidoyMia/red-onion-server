@@ -8,5 +8,5 @@ const Foods_controller_1 = require("./Foods.controller");
 const foodRouter = express_1.default.Router();
 foodRouter.post('/create', Foods_controller_1.FoodsController.createFoodsController);
 foodRouter.get('/category/:id', Foods_controller_1.FoodsController.getByCategoryController);
-foodRouter.get('/:id', Foods_controller_1.FoodsController.getByCategoryController);
+foodRouter.get('/:id', Foods_controller_1.FoodsController.getSingleFoodController);
 exports.default = foodRouter;
