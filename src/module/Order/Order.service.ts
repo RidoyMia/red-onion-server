@@ -47,7 +47,8 @@ const deletedOrder = async(id : number) =>{
 
 const getAllOrders = async(options : {}) :Promise <Iorder[] | any > =>{
     //@ts-ignore
-    const {searchtext='',page=1} = options
+    const {searchText='',page=1} = options
+    console.log(searchText);
     const result = await prisma.orders.findMany({
         include : {
             user : true,
@@ -56,26 +57,26 @@ const getAllOrders = async(options : {}) :Promise <Iorder[] | any > =>{
         where : {
             user : {
                 name : {
-                    contains : searchtext,
+                    contains : searchText,
                     mode : 'insensitive'
                 },
                 email : {
-                    contains : searchtext,
+                    contains : searchText,
                     mode : 'insensitive'
                 }
             },
             product : {
                 name : {
-                    contains : searchtext,
+                    contains : searchText,
                     mode :'insensitive'
                 },
                 descriptions : {
-                    contains : searchtext,
+                    contains : searchText,
                     mode : 'insensitive'
                 },
                category : {
                 name : {
-                    contains : searchtext,
+                    contains : searchText,
                     mode : 'insensitive'
                 }
                }
