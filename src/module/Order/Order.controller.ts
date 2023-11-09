@@ -2,10 +2,16 @@ import express,{Request,Response,NextFunction}  from "express"
 import { GlobalError } from "../../globalError/GlobalError"
 import { OrderService } from "./Order.service";
 import { Iorder } from "./Order.interface";
+import { getUserId } from "../../Helpers/getUserId/getuserId";
 const createOrderController = async(req:Request,res:Response,next:NextFunction) => {
     try {
         const orderInfo = req.body;
-        const result = await OrderService.createOrderService(orderInfo);
+        const {email ,...others} = orderInfo;
+        const userId = await getUserId(orderInfo.email)
+        console.log(others.userId = userId);
+        console.log(others);
+        console.log(orderInfo);
+        const result = await OrderService.createOrderService(others);
         res.status(200).send({
             action : true,
             result

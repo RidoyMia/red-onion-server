@@ -40,9 +40,18 @@ const getAlluser = async(options:{}) : Promise<Iuser[] | any> =>{
     })
     return result
 }
+const signInUserService = async(email : string) : Promise<Iuser | any> =>{
+    const result = await prisma.user.findUnique({
+        where : {
+         email
+        }
+    })
+    return result
+}
 
 export const UserService = {
     createUserService,
     getSingleUser,
-    getAlluser
+    getAlluser,
+    signInUserService
 }
