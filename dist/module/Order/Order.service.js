@@ -27,8 +27,12 @@ const getUsersOrderService = (email) => __awaiter(void 0, void 0, void 0, functi
         },
         include: {
             user: true,
-            product: true
-        }
+            product: {
+                include: {
+                    category: true
+                }
+            }
+        },
     });
     return result;
 });

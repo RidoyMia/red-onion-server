@@ -42,6 +42,7 @@ model orders {
   user User @relation(fields: [userId],references: [id])
   productId Int
   needQuantity Int
+  payment Boolean @default(false)
   product Foods @relation(fields: [productId],references: [id])
   number Int 
   address String 

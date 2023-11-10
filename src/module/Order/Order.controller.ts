@@ -10,8 +10,8 @@ const createOrderController = async(req:Request,res:Response,next:NextFunction) 
         const orderInfo = req.body;
         const {email ,...others} = orderInfo;
         const userId = await getUserId(orderInfo.email)
-        console.log(others.userId = userId);
-        console.log(others,'others');
+       others.userId = userId;
+        console.log(others,'otehre');
         
         const result = await OrderService.createOrderService(others);
         res.status(200).send({
@@ -19,7 +19,7 @@ const createOrderController = async(req:Request,res:Response,next:NextFunction) 
             result
         })
     } catch (error) {
-        GlobalError(error,req,res,next)
+        // GlobalError(error,req,res,next)
     }
 }
 const getUsersOrderController = async(req:Request,res:Response,next:NextFunction) :Promise<Iorder[] | any>=>{
@@ -27,7 +27,7 @@ const getUsersOrderController = async(req:Request,res:Response,next:NextFunction
     const email = req.params.email;
     // @ts-ignore
     const {accesstoken} = req.headers
-   console.log(accesstoken);
+   
      //@ts-ignore
     const verified = await jwt.verify(accesstoken,config.ACCESSTOKEN as Secret)
     
@@ -35,7 +35,7 @@ const getUsersOrderController = async(req:Request,res:Response,next:NextFunction
         console.log('f');
     }else{
         const result = await OrderService.getUsersOrderService(email)
-        console.log(result,'kli');
+        
         res.status(200).send({
            action : true,
            result
