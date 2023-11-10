@@ -3,14 +3,16 @@ import { GlobalError } from "../../globalError/GlobalError"
 import { OrderService } from "./Order.service";
 import { Iorder } from "./Order.interface";
 import { getUserId } from "../../Helpers/getUserId/getuserId";
+import jwt, { Secret } from "jsonwebtoken"
+import { config } from "../../config";
 const createOrderController = async(req:Request,res:Response,next:NextFunction) => {
     try {
         const orderInfo = req.body;
         const {email ,...others} = orderInfo;
         const userId = await getUserId(orderInfo.email)
         console.log(others.userId = userId);
-        console.log(others);
-        console.log(orderInfo);
+        console.log(others,'others');
+        
         const result = await OrderService.createOrderService(others);
         res.status(200).send({
             action : true,
@@ -23,11 +25,23 @@ const createOrderController = async(req:Request,res:Response,next:NextFunction) 
 const getUsersOrderController = async(req:Request,res:Response,next:NextFunction) :Promise<Iorder[] | any>=>{
  try {
     const email = req.params.email;
- const result = await OrderService.getUsersOrderService(email)
- res.status(200).send({
-    action : true,
-    result
- })
+    // @ts-ignore
+    const {accesstoken} = req.headers
+   console.log(accesstoken);
+    //@ts-ignore
+    const verified = await jwt.verify(accesstoken,config.ACCESSTOKEN as Secret)
+    
+    if(!verified){
+        console.log('f');
+    }else{
+        const result = await OrderService.getUsersOrderService(email)
+        console.log(result,'kli');
+        res.status(200).send({
+           action : true,
+           result
+        })
+    }
+ 
  } catch (error) {
     GlobalError(error,req,res,next)
  }

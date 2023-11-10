@@ -50,8 +50,17 @@ const getAlluser = (options) => __awaiter(void 0, void 0, void 0, function* () {
     });
     return result;
 });
+const signInUserService = (email) => __awaiter(void 0, void 0, void 0, function* () {
+    const result = yield Prisma_1.prisma.user.findUnique({
+        where: {
+            email
+        }
+    });
+    return result;
+});
 exports.UserService = {
     createUserService,
     getSingleUser,
-    getAlluser
+    getAlluser,
+    signInUserService
 };

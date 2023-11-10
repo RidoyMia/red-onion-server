@@ -9,4 +9,6 @@ const path_1 = __importDefault(require("path"));
 dotenv_1.default.config({ path: path_1.default.join(process.cwd(), '.env') });
 exports.config = {
     port: process.env.PORT,
+    ACCESSTOKEN: process.env.ACCESSTOKEN,
+    ACCESSTOKEN_DATE: process.env.ACCESSTOKEN_DATE
 };

@@ -2,7 +2,7 @@ import { NextFunction ,Request,Response} from "express";
 import { GlobalError } from "../../globalError/GlobalError";
 import { orderController } from "../Order/Order.controller";
 import { UserService } from "./User.services";
-import jwt from "jsonwebtoken"
+import jwt, { Secret } from "jsonwebtoken"
 import {config} from "../../config/index"
 
 const createUserController = async(req:Request,res:Response,next:NextFunction) =>{
@@ -46,11 +46,16 @@ const getAlluserController = async(req:Request,res:Response,next:NextFunction) =
 const signInUserController = async(req:Request,res:Response,next:NextFunction) =>{
     try {
         const email = req.params.email;
-        console.log(email);
-        const result = await UserService.signInUserService(email);
         
+        //@ts-ignore
+        
+        const result = await UserService.signInUserService(email);
+      
         if(result?.id){
-         const accesstoken = await jwt.sign({email : result?.email,role : result?.role,id:result?.id},config.ACCESSTOKEN as string ,{expiresIn : config.ACCESSTOKEN_DATE})
+        const accesstoken = jwt.sign({ email : result?.email,role : result?.role },config.ACCESSTOKEN as Secret,{expiresIn : '365d'});
+        
+       
+       
          res.status(200).send({
             action : true,
             accesstoken

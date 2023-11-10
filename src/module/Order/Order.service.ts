@@ -2,6 +2,7 @@ import { prisma } from "../../Prisma/Prisma";
 import { Iorder } from "./Order.interface";
 
 const createOrderService = async(order : Iorder) : Promise <Iorder | any> =>{
+    console.log(order,'order');
     const result = await prisma.orders.create({
         data : order
     })
