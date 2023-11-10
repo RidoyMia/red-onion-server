@@ -12,6 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.OrderService = void 0;
 const Prisma_1 = require("../../Prisma/Prisma");
 const createOrderService = (order) => __awaiter(void 0, void 0, void 0, function* () {
+    console.log(order, 'order');
     const result = yield Prisma_1.prisma.orders.create({
         data: order
     });

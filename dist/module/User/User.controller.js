@@ -60,10 +60,10 @@ const getAlluserController = (req, res, next) => __awaiter(void 0, void 0, void 
 const signInUserController = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const email = req.params.email;
-        console.log(email);
+        //@ts-ignore
         const result = yield User_services_1.UserService.signInUserService(email);
         if (result === null || result === void 0 ? void 0 : result.id) {
-            const accesstoken = yield jsonwebtoken_1.default.sign({ email: result === null || result === void 0 ? void 0 : result.email, role: result === null || result === void 0 ? void 0 : result.role, id: result === null || result === void 0 ? void 0 : result.id }, index_1.config.ACCESSTOKEN, { expiresIn: index_1.config.ACCESSTOKEN_DATE });
+            const accesstoken = jsonwebtoken_1.default.sign({ email: result === null || result === void 0 ? void 0 : result.email, role: result === null || result === void 0 ? void 0 : result.role }, index_1.config.ACCESSTOKEN, { expiresIn: '365d' });
             res.status(200).send({
                 action: true,
                 accesstoken

@@ -17,10 +17,20 @@ const getUsersOrderService = async(email : string) : Promise<Iorder[] | any> =>{
                 email : email
             }
         },
+        
         include : {
             user : true,
-            product : true
-        }
+            
+            product : {
+                
+                include : {
+                    category : true
+                }
+            }
+            
+            
+        },
+        
     })
     return result;
 } 

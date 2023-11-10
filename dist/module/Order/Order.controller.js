@@ -19,19 +19,23 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.orderController = void 0;
 const GlobalError_1 = require("../../globalError/GlobalError");
 const Order_service_1 = require("./Order.service");
 const getuserId_1 = require("../../Helpers/getUserId/getuserId");
+const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
+const config_1 = require("../../config");
 const createOrderController = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const orderInfo = req.body;
         const { email } = orderInfo, others = __rest(orderInfo, ["email"]);
         const userId = yield (0, getuserId_1.getUserId)(orderInfo.email);
         console.log(others.userId = userId);
-        console.log(others);
-        console.log(orderInfo);
+        console.log(others, 'others');
         const result = yield Order_service_1.OrderService.createOrderService(others);
         res.status(200).send({
             action: true,
@@ -45,11 +49,22 @@ const createOrderController = (req, res, next) => __awaiter(void 0, void 0, void
 const getUsersOrderController = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const email = req.params.email;
-        const result = yield Order_service_1.OrderService.getUsersOrderService(email);
-        res.status(200).send({
-            action: true,
-            result
-        });
+        // @ts-ignore
+        const { accesstoken } = req.headers;
+        console.log(accesstoken);
+        //@ts-ignore
+        const verified = yield jsonwebtoken_1.default.verify(accesstoken, config_1.config.ACCESSTOKEN);
+        if (!verified) {
+            console.log('f');
+        }
+        else {
+            const result = yield Order_service_1.OrderService.getUsersOrderService(email);
+            console.log(result, 'kli');
+            res.status(200).send({
+                action: true,
+                result
+            });
+        }
     }
     catch (error) {
         (0, GlobalError_1.GlobalError)(error, req, res, next);
