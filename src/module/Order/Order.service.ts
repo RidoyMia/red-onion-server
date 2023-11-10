@@ -100,10 +100,22 @@ const getAllOrders = async(options : {}) :Promise <Iorder[] | any > =>{
     return result 
 }
 
+const orderPayment = async(id : number) =>{
+    const result = await prisma.orders.update({
+        where : {
+            id
+        },
+        data : {
+            payment : true
+        }
+    })
+}
+
 export const OrderService = {
     createOrderService,
     getUsersOrderService,
     getAllOrders,
     getSingleOrderService,
-    deletedOrder
+    deletedOrder,
+    orderPayment
 }

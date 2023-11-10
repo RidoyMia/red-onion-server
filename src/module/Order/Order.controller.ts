@@ -84,11 +84,25 @@ const deleteOrderController = async(req:Request,res:Response,next:NextFunction) 
     }
 }
 
+const orderPaymentController = async(req:Request,res:Response,next:NextFunction) :Promise<Iorder | any>=>{
+    try {
+        const id = parseInt(req.params.id);
+        const result = await OrderService.orderPayment(id);
+        res.status(200).send({
+            action : true,
+            result
+        })
+    } catch (error) {
+        GlobalError(error,req,res,next)
+    }
+}
+
 export const orderController = {
     createOrderController,
     getUsersOrderController,
     getSingleOrderController,
     getAllOrdersController,
-    deleteOrderController
+    deleteOrderController,
+    orderPaymentController
 
 }

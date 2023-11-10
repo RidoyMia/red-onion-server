@@ -34,8 +34,8 @@ const createOrderController = (req, res, next) => __awaiter(void 0, void 0, void
         const orderInfo = req.body;
         const { email } = orderInfo, others = __rest(orderInfo, ["email"]);
         const userId = yield (0, getuserId_1.getUserId)(orderInfo.email);
-        console.log(others.userId = userId);
-        console.log(others, 'others');
+        others.userId = userId;
+        console.log(others, 'otehre');
         const result = yield Order_service_1.OrderService.createOrderService(others);
         res.status(200).send({
             action: true,
@@ -43,7 +43,7 @@ const createOrderController = (req, res, next) => __awaiter(void 0, void 0, void
         });
     }
     catch (error) {
-        (0, GlobalError_1.GlobalError)(error, req, res, next);
+        // GlobalError(error,req,res,next)
     }
 });
 const getUsersOrderController = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
@@ -51,7 +51,6 @@ const getUsersOrderController = (req, res, next) => __awaiter(void 0, void 0, vo
         const email = req.params.email;
         // @ts-ignore
         const { accesstoken } = req.headers;
-        console.log(accesstoken);
         //@ts-ignore
         const verified = yield jsonwebtoken_1.default.verify(accesstoken, config_1.config.ACCESSTOKEN);
         if (!verified) {
@@ -59,7 +58,6 @@ const getUsersOrderController = (req, res, next) => __awaiter(void 0, void 0, vo
         }
         else {
             const result = yield Order_service_1.OrderService.getUsersOrderService(email);
-            console.log(result, 'kli');
             res.status(200).send({
                 action: true,
                 result
