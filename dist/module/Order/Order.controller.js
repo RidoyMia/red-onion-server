@@ -107,10 +107,24 @@ const deleteOrderController = (req, res, next) => __awaiter(void 0, void 0, void
         (0, GlobalError_1.GlobalError)(error, req, res, next);
     }
 });
+const orderPaymentController = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const id = parseInt(req.params.id);
+        const result = yield Order_service_1.OrderService.orderPayment(id);
+        res.status(200).send({
+            action: true,
+            result
+        });
+    }
+    catch (error) {
+        (0, GlobalError_1.GlobalError)(error, req, res, next);
+    }
+});
 exports.orderController = {
     createOrderController,
     getUsersOrderController,
     getSingleOrderController,
     getAllOrdersController,
-    deleteOrderController
+    deleteOrderController,
+    orderPaymentController
 };

@@ -58,7 +58,8 @@ const signInUserController = async(req:Request,res:Response,next:NextFunction) =
        
          res.status(200).send({
             action : true,
-            accesstoken
+            accesstoken,
+            result
          })
         }
     } catch (error) {

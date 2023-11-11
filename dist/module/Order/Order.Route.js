@@ -10,5 +10,6 @@ OrderRouter.post('/create', Order_controller_1.orderController.createOrderContro
 OrderRouter.get('/all', Order_controller_1.orderController.getAllOrdersController);
 OrderRouter.get('/user/:email', Order_controller_1.orderController.getUsersOrderController);
 OrderRouter.get('/:id', Order_controller_1.orderController.getSingleOrderController);
+OrderRouter.patch('/:id', Order_controller_1.orderController.orderPaymentController);
 OrderRouter.delete('/:id', Order_controller_1.orderController.deleteOrderController);
 exports.default = OrderRouter;

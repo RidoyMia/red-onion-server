@@ -97,10 +97,21 @@ const getAllOrders = (options) => __awaiter(void 0, void 0, void 0, function* ()
     });
     return result;
 });
+const orderPayment = (id) => __awaiter(void 0, void 0, void 0, function* () {
+    const result = yield Prisma_1.prisma.orders.update({
+        where: {
+            id
+        },
+        data: {
+            payment: true
+        }
+    });
+});
 exports.OrderService = {
     createOrderService,
     getUsersOrderService,
     getAllOrders,
     getSingleOrderService,
-    deletedOrder
+    deletedOrder,
+    orderPayment
 };
