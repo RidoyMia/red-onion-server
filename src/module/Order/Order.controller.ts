@@ -96,13 +96,37 @@ const orderPaymentController = async(req:Request,res:Response,next:NextFunction)
         GlobalError(error,req,res,next)
     }
 }
-
+const getOrderByMonthController = async(req:Request,res:Response,next:NextFunction) :Promise<Iorder | any>=>{
+    try {
+        
+        const result = await OrderService.getOrderByMonth();
+        res.status(200).send({
+            action : true,
+            result
+        })
+    } catch (error) {
+        GlobalError(error,req,res,next)
+    }
+}
+const getAllOrdersCountController =  async(req:Request,res:Response,next:NextFunction) :Promise<Iorder | any>=>{
+    try {
+        const result = await OrderService.getAllOrdersCount();
+        res.status(200).send({
+            action : true,
+            result
+        })
+    } catch (error) {
+        GlobalError(error,req,res,next)
+    }
+}
 export const orderController = {
     createOrderController,
     getUsersOrderController,
     getSingleOrderController,
     getAllOrdersController,
     deleteOrderController,
-    orderPaymentController
+    orderPaymentController,
+    getOrderByMonthController,
+    getAllOrdersCountController
 
 }

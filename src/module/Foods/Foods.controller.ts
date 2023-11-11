@@ -39,10 +39,23 @@ const getSingleFoodController = async(req:Request,res:Response,next:NextFunction
         GlobalError(error,req,res,next)
     }
 }
+const getAllProducts = async(req:Request,res:Response,next:NextFunction):Promise<Ifood[] | any> =>{
+    try {
+        const options = req.query;
+        const result = await FoodsService.getAllproduct(options);
+        res.status(200).send({
+            action : true,
+            result
+        })
+    } catch (error) {
+        GlobalError(error,req,res,next)
+    }
+}
 
 
 export const FoodsController = {
     createFoodsController,
     getByCategoryController,
-    getSingleFoodController
+    getSingleFoodController,
+    getAllProducts
 }

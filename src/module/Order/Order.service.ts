@@ -111,11 +111,34 @@ const orderPayment = async(id : number) =>{
     })
 }
 
+
+const getOrderByMonth = async (): Promise<Iorder[] | any> => {
+    const result = await prisma.$queryRaw`
+      SELECT 
+        EXTRACT (YEAR FROM "createdAt") :: integer as year,
+        EXTRACT (MONTH FROM "createdAt") :: integer as month,
+        EXTRACT (DAY FROM "createdAt") :: integer as day,
+        SUM("needQuantity")::integer as total_quantity
+      FROM orders
+      GROUP BY 
+        year, month, day
+      ORDER BY year, month
+    `;
+    return result;
+  };
+
+  const getAllOrdersCount = async():Promise< any > =>{
+    const total = await prisma.orders.count()
+    return total
+  }
+  
 export const OrderService = {
     createOrderService,
     getUsersOrderService,
     getAllOrders,
     getSingleOrderService,
     deletedOrder,
-    orderPayment
+    orderPayment,
+    getOrderByMonth,
+    getAllOrdersCount
 }
