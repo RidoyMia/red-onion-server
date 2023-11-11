@@ -30,22 +30,25 @@ const getSingleFood = async(id : number) : Promise<Ifood[] | any>=>{
 const getAllproduct =async(options:object): Promise<any> =>{
     //@ts-ignore
     const {page=1,searchText=""} = options;
+    console.log(searchText);
 const total = await prisma.foods.count();
 const result = await prisma.foods.findMany({
     where : {
-        category : {
-            name : {
+        OR : [
+            {category : {
+                name : {
+                    contains : searchText,
+                    mode : 'insensitive'
+                }
+            }},
+           { name : {
                 contains : searchText,
                 mode : 'insensitive'
-            }
-        },
-        name : {
-            contains : searchText,
-            mode : 'insensitive'
-        },descriptions: {
-            contains : searchText,
-            mode : 'insensitive'
-        }
+            }},{descriptions: {
+                contains : searchText,
+                mode : 'insensitive'
+            }}
+        ]
     },skip : (parseInt(page) - 1) * 10,
     take : 10
 })

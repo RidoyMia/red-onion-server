@@ -42,6 +42,7 @@ const getSingleFoodController = async(req:Request,res:Response,next:NextFunction
 const getAllProducts = async(req:Request,res:Response,next:NextFunction):Promise<Ifood[] | any> =>{
     try {
         const options = req.query;
+        console.log(options);
         const result = await FoodsService.getAllproduct(options);
         res.status(200).send({
             action : true,
