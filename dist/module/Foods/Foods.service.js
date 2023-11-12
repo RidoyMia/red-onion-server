@@ -33,8 +33,36 @@ const getSingleFood = (id) => __awaiter(void 0, void 0, void 0, function* () {
     });
     return result;
 });
+const getAllproduct = (options) => __awaiter(void 0, void 0, void 0, function* () {
+    //@ts-ignore
+    const { page = 1, searchText = "" } = options;
+    console.log(searchText);
+    const total = yield Prisma_1.prisma.foods.count();
+    const result = yield Prisma_1.prisma.foods.findMany({
+        where: {
+            OR: [
+                { category: {
+                        name: {
+                            contains: searchText,
+                            mode: 'insensitive'
+                        }
+                    } },
+                { name: {
+                        contains: searchText,
+                        mode: 'insensitive'
+                    } }, { descriptions: {
+                        contains: searchText,
+                        mode: 'insensitive'
+                    } }
+            ]
+        }, skip: (parseInt(page) - 1) * 10,
+        take: 10
+    });
+    return { result, total };
+});
 exports.FoodsService = {
     createFoodsService,
     getByCategory,
-    getSingleFood
+    getSingleFood,
+    getAllproduct
 };

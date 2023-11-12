@@ -64,7 +64,11 @@ const getAllOrders = async(options : {}) :Promise <Iorder[] | any > =>{
     const result = await prisma.orders.findMany({
         include : {
             user : true,
-            product : true
+            product : {
+                include : {
+                    category : true
+                }
+            }
         },
         where : {
             user : {

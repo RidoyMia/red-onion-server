@@ -51,8 +51,23 @@ const getSingleFoodController = (req, res, next) => __awaiter(void 0, void 0, vo
         (0, GlobalError_1.GlobalError)(error, req, res, next);
     }
 });
+const getAllProducts = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const options = req.query;
+        console.log(options);
+        const result = yield Foods_service_1.FoodsService.getAllproduct(options);
+        res.status(200).send({
+            action: true,
+            result
+        });
+    }
+    catch (error) {
+        (0, GlobalError_1.GlobalError)(error, req, res, next);
+    }
+});
 exports.FoodsController = {
     createFoodsController,
     getByCategoryController,
-    getSingleFoodController
+    getSingleFoodController,
+    getAllProducts
 };

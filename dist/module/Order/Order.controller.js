@@ -120,11 +120,37 @@ const orderPaymentController = (req, res, next) => __awaiter(void 0, void 0, voi
         (0, GlobalError_1.GlobalError)(error, req, res, next);
     }
 });
+const getOrderByMonthController = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const result = yield Order_service_1.OrderService.getOrderByMonth();
+        res.status(200).send({
+            action: true,
+            result
+        });
+    }
+    catch (error) {
+        (0, GlobalError_1.GlobalError)(error, req, res, next);
+    }
+});
+const getAllOrdersCountController = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const result = yield Order_service_1.OrderService.getAllOrdersCount();
+        res.status(200).send({
+            action: true,
+            result
+        });
+    }
+    catch (error) {
+        (0, GlobalError_1.GlobalError)(error, req, res, next);
+    }
+});
 exports.orderController = {
     createOrderController,
     getUsersOrderController,
     getSingleOrderController,
     getAllOrdersController,
     deleteOrderController,
-    orderPaymentController
+    orderPaymentController,
+    getOrderByMonthController,
+    getAllOrdersCountController
 };

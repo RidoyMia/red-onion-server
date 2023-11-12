@@ -107,11 +107,31 @@ const orderPayment = (id) => __awaiter(void 0, void 0, void 0, function* () {
         }
     });
 });
+const getOrderByMonth = () => __awaiter(void 0, void 0, void 0, function* () {
+    const result = yield Prisma_1.prisma.$queryRaw `
+      SELECT 
+        EXTRACT (YEAR FROM "createdAt") :: integer as year,
+        EXTRACT (MONTH FROM "createdAt") :: integer as month,
+        EXTRACT (DAY FROM "createdAt") :: integer as day,
+        SUM("needQuantity")::integer as total_quantity
+      FROM orders
+      GROUP BY 
+        year, month, day
+      ORDER BY year, month
+    `;
+    return result;
+});
+const getAllOrdersCount = () => __awaiter(void 0, void 0, void 0, function* () {
+    const total = yield Prisma_1.prisma.orders.count();
+    return total;
+});
 exports.OrderService = {
     createOrderService,
     getUsersOrderService,
     getAllOrders,
     getSingleOrderService,
     deletedOrder,
-    orderPayment
+    orderPayment,
+    getOrderByMonth,
+    getAllOrdersCount
 };
