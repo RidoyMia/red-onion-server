@@ -63,7 +63,11 @@ const getAllOrders = (options) => __awaiter(void 0, void 0, void 0, function* ()
     const result = yield Prisma_1.prisma.orders.findMany({
         include: {
             user: true,
-            product: true
+            product: {
+                include: {
+                    category: true
+                }
+            }
         },
         where: {
             user: {

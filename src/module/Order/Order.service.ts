@@ -101,7 +101,8 @@ const getAllOrders = async(options : {}) :Promise <Iorder[] | any > =>{
         skip : (page -1) * 10
 
     })
-    return result 
+    const total = await prisma.orders.count()
+    return {result,total} 
 }
 
 const orderPayment = async(id : number) =>{
