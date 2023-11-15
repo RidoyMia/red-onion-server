@@ -65,9 +65,23 @@ const getAllProducts = (req, res, next) => __awaiter(void 0, void 0, void 0, fun
         (0, GlobalError_1.GlobalError)(error, req, res, next);
     }
 });
+const deletedProducts = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const id = parseInt(req.params.id);
+        const result = yield Foods_service_1.FoodsService.deletedProduct(id);
+        res.status(200).send({
+            action: true,
+            result
+        });
+    }
+    catch (error) {
+        (0, GlobalError_1.GlobalError)(error, req, res, next);
+    }
+});
 exports.FoodsController = {
     createFoodsController,
     getByCategoryController,
     getSingleFoodController,
-    getAllProducts
+    getAllProducts,
+    deletedProducts
 };

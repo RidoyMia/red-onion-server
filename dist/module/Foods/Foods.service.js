@@ -63,9 +63,18 @@ const getAllproduct = (options) => __awaiter(void 0, void 0, void 0, function* (
     });
     return { result, total };
 });
+const deletedProduct = (id) => __awaiter(void 0, void 0, void 0, function* () {
+    const result = yield Prisma_1.prisma.foods.delete({
+        where: {
+            id
+        }
+    });
+    return result;
+});
 exports.FoodsService = {
     createFoodsService,
     getByCategory,
     getSingleFood,
-    getAllproduct
+    getAllproduct,
+    deletedProduct
 };

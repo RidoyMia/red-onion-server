@@ -60,10 +60,19 @@ return {result,total}
 }
 
 const deletedProduct = async(id : number) =>{
+    console.log(id,'deleted');
     const result = await prisma.foods.delete({
         where : {
             id
         }
+    })
+    return result
+}
+const updateProduct = async(id : number,data:Ifood) : Promise<Ifood | any> =>{
+    const result = await prisma.foods.update({
+        where : {
+            id
+        },data
     })
     return result
 }
@@ -73,5 +82,6 @@ export const FoodsService = {
     getByCategory,
     getSingleFood,
     getAllproduct,
-    deletedProduct
+    deletedProduct,
+    updateProduct
 }

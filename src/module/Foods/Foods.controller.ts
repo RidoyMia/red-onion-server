@@ -64,6 +64,19 @@ const deletedProducts = async(req:Request,res:Response,next:NextFunction):Promis
         GlobalError(error,req,res,next)
     }
 }
+const updateProductController = async(req:Request,res:Response,next:NextFunction):Promise<Ifood[] | any> =>{
+    try {
+       const id = parseInt(req.params.id) ;
+       const updateData = req.body;
+       const result = await FoodsService.updateProduct(id,updateData);
+       res.status(200).send({
+        action : true,
+        result
+       })
+    } catch (error) {
+        GlobalError(error,req,res,next)
+    }
+}
 
 
 export const FoodsController = {
@@ -71,5 +84,6 @@ export const FoodsController = {
     getByCategoryController,
     getSingleFoodController,
     getAllProducts,
-    deletedProducts
+    deletedProducts,
+    updateProductController
 }
