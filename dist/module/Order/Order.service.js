@@ -99,7 +99,8 @@ const getAllOrders = (options) => __awaiter(void 0, void 0, void 0, function* ()
         }, take: 10,
         skip: (page - 1) * 10
     });
-    return result;
+    const total = yield Prisma_1.prisma.orders.count();
+    return { result, total };
 });
 const orderPayment = (id) => __awaiter(void 0, void 0, void 0, function* () {
     const result = yield Prisma_1.prisma.orders.update({

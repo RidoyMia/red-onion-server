@@ -49,7 +49,11 @@ const result = await prisma.foods.findMany({
                 mode : 'insensitive'
             }}
         ]
-    },skip : (parseInt(page) - 1) * 10,
+    },include:{
+        category : true
+    }
+    ,
+    skip : (parseInt(page) - 1) * 10,
     take : 10
 })
 return {result,total}
