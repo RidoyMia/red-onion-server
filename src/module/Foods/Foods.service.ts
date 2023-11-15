@@ -59,11 +59,19 @@ const result = await prisma.foods.findMany({
 return {result,total}
 }
 
-
+const deletedProduct = async(id : number) =>{
+    const result = await prisma.foods.delete({
+        where : {
+            id
+        }
+    })
+    return result
+}
 
 export const FoodsService = {
     createFoodsService,
     getByCategory,
     getSingleFood,
-    getAllproduct
+    getAllproduct,
+    deletedProduct
 }
