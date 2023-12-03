@@ -78,10 +78,25 @@ const deletedProducts = (req, res, next) => __awaiter(void 0, void 0, void 0, fu
         (0, GlobalError_1.GlobalError)(error, req, res, next);
     }
 });
+const updateProductController = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const id = parseInt(req.params.id);
+        const updateData = req.body;
+        const result = yield Foods_service_1.FoodsService.updateProduct(id, updateData);
+        res.status(200).send({
+            action: true,
+            result
+        });
+    }
+    catch (error) {
+        (0, GlobalError_1.GlobalError)(error, req, res, next);
+    }
+});
 exports.FoodsController = {
     createFoodsController,
     getByCategoryController,
     getSingleFoodController,
     getAllProducts,
-    deletedProducts
+    deletedProducts,
+    updateProductController
 };

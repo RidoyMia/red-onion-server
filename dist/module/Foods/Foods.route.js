@@ -11,4 +11,5 @@ foodRouter.get('/category/:id', Foods_controller_1.FoodsController.getByCategory
 foodRouter.get('/all', Foods_controller_1.FoodsController.getAllProducts);
 foodRouter.get('/:id', Foods_controller_1.FoodsController.getSingleFoodController);
 foodRouter.delete('/:id', Foods_controller_1.FoodsController.deletedProducts);
+foodRouter.patch('/:id', Foods_controller_1.FoodsController.updateProductController);
 exports.default = foodRouter;
