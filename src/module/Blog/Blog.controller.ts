@@ -2,7 +2,7 @@ import express, { NextFunction,Request,Response } from "express";
 import { Iblog } from "./Blog.interface";
 import { GlobalError } from "../../globalError/GlobalError";
 import { BlogService } from "./Blog.service";
-
+// this is
 const createBlog = async(req:Request,res:Response,next:NextFunction) : Promise<Iblog[] | any> =>{
     try {
         const blogInfo = req.body;
